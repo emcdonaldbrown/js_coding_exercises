@@ -37,4 +37,18 @@ export function countSheep(arr) {
 export function hasMPostCode(person) {
   if (person === undefined) throw new Error("person is required");
 
+    var cPostcode = person.address.postCode;
+    var cLogical  = false;
+
+    
+    if ((cPostcode.substr(1,1) === 'M')) 
+      cLogical = true;
+    else
+      cLogical = false;
+
+    if ((cLogical = true) && (person.address.city != 'Manchester'))
+       cLogical = false;
+
+    return cLogical;  
+
 }
